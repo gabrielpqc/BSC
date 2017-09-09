@@ -1,0 +1,211 @@
+-- ALINEA 3
+-- (a)                                                                                  
+INSERT INTO clienteServico VALUES(1516432,9876512,'Brisa', 'Av.Dona Leonor, n9','Lisboa');
+
+INSERT INTO servico VALUES(1516432,'A2Evr','Evora');
+INSERT INTO servico VALUES(1516432,'A2Lsb','Lisboa');
+INSERT INTO servico VALUES(1516432,'A2Gran','Grandola');
+INSERT INTO servico VALUES(1516432,'A1Por','Porto');
+INSERT INTO servico VALUES(1516432,'A1Bra','Braga');
+INSERT INTO servico VALUES(1516432,'A1Coim','Coimbra');
+INSERT INTO servico VALUES(1516432,'A6Faro','Faro');
+INSERT INTO servico VALUES(1516432,'A6Porti','Portimão');
+INSERT INTO servico VALUES(1516432,'A6Sin','Sines');
+
+INSERT INTO portagemAutoEstrada VALUES('A2Evr',71,'Evora','3');
+INSERT INTO portagemAutoEstrada VALUES('A2Lsb',171,'Lisboa','3');
+INSERT INTO portagemAutoEstrada VALUES('A2Gran',91,'Grandola','3');
+INSERT INTO portagemAutoEstrada VALUES('A1Por',122,'Porto','3');
+INSERT INTO portagemAutoEstrada VALUES('A1Bra',162,'Braga','3');
+INSERT INTO portagemAutoEstrada VALUES('A1Coim',242,'Coimbra','3');
+INSERT INTO portagemAutoEstrada VALUES('A6Faro',56,'Faro','3');
+INSERT INTO portagemAutoEstrada VALUES('A6Porti',16,'Portimao','3');
+INSERT INTO portagemAutoEstrada VALUES('A6Sin',96,'Sines','3');
+
+INSERT INTO tem VALUES('A2Evr', 'A2EvrEntrada');
+INSERT INTO tem VALUES('A2Evr', 'A2EvrSaida');
+INSERT INTO tem VALUES('A2Lsb', 'A2LsbEntrada');
+INSERT INTO tem VALUES('A2Lsb', 'A2LsbSaida');
+INSERT INTO tem VALUES('A2Gran', 'A2GranEntrada');
+INSERT INTO tem VALUES('A2Gran', 'A2GranSaida');
+INSERT INTO tem VALUES('A6Faro', 'A6FaroEntrada');
+INSERT INTO tem VALUES('A6Faro', 'A6FaroSaida');
+INSERT INTO tem VALUES('A6Porti', 'A6PortiEntrada');
+INSERT INTO tem VALUES('A6Porti', 'A6PortiSaida');
+INSERT INTO tem VALUES('A6Sin', 'A6SinEntrada');
+INSERT INTO tem VALUES('A6Sin', 'A6SinSaida');
+INSERT INTO tem VALUES('A1Por', 'A1PorEntrada');
+INSERT INTO tem VALUES('A1Por', 'A1PorSaida');
+INSERT INTO tem VALUES('A1Bra', 'A1BraEntrada');
+INSERT INTO tem VALUES('A1Bra', 'A1BraSaida');
+INSERT INTO tem VALUES('A1Coim', 'A1CoimEntrada');
+INSERT INTO tem VALUES('A1Coim', 'A1CoimSaida');
+
+-- (b)                                                                                  
+INSERT INTO clienteServico VALUES(2521432,8855512,'Galp', 'Rua da Energia, n15','Porto');
+-- 1-Evora     3-Grandola
+INSERT INTO servico VALUES(2521432,'BombaEvr','Evora');
+INSERT INTO servico VALUES(2521432,'BombaGran','Grandola');
+INSERT INTO servico VALUES(2521432,'BombaLsb','Lisboa');  
+                                     
+INSERT INTO bomba VALUES('BombaEvr','Rua da Alegria, n25','Evora');
+INSERT INTO tem VALUES ('BombaEvr','BombaEvr1'); --Gasoleo
+INSERT INTO tem VALUES ('BombaEvr','BombaEvr2'); --Gasolina
+INSERT INTO bomba VALUES('BombaGran','Rua Vila Morena, n15','Grandola');
+INSERT INTO tem VALUES ('BombaGran','BombaGran1'); --Gasolina
+INSERT INTO tem VALUES ('BombaGran','BombaGran2'); --Gasoleo
+INSERT INTO bomba VALUES('BombaLsb','Rua da Guitarra, n34','Grandola');
+INSERT INTO tem VALUES ('BombaLsb','BombaLsb1'); --Gasolina
+INSERT INTO tem VALUES ('BombaLsb','BombaLsb2'); --Gasoleo
+
+-- (c)                                                                                  
+INSERT INTO clienteServico VALUES(321432,751512,'Lusoponte','Rua da Passagem, n26','Lisboa');
+
+INSERT INTO servico VALUES(321432,'Pt25Abril','Lisboa');  
+INSERT INTO servico VALUES(321432,'PtVGama','Lisboa'); 
+
+INSERT INTO ponte VALUES('Pt25Abril',2, '25 de Abril' );
+INSERT INTO ponte VALUES('PtVGama',1, 'Vasco da Gama');
+INSERT INTO tem VALUES('Pt25Abril','Pt25AbrilEntradaS');
+INSERT INTO tem VALUES('PtVGama','PtVGamaEntradaS');
+INSERT INTO tem VALUES('Pt25Abril','Pt25AbrilEntradaN');
+INSERT INTO tem VALUES('PtVGama','PtVGamaEntradaN');
+
+-- (d)                                                                                   
+INSERT INTO clienteServico VALUES(3521432,8855512,'BragaParques', 'Av. Descobrimentos, n75','Braga');
+
+INSERT INTO servico VALUES(3521432,'EvrParq','Évora');
+INSERT INTO servico VALUES(3521432,'LisbParq','Lisboa');
+
+--     0.03€ - ÉVORA       0.04€ - LISBOA                                                
+INSERT INTO parque VALUES('EvrParq',0.03,'Evora');
+INSERT INTO parque VALUES('LisbParq',0.04,'Lisboa');
+
+INSERT INTO tem VALUES ('LisbParq', 'EntradaLisbParq1');
+INSERT INTO tem VALUES ('LisbParq', 'EntradaLisbParq2');
+INSERT INTO tem VALUES ('LisbParq', 'EntradaLisbParq3');
+INSERT INTO tem VALUES ('LisbParq', 'SaidaLisbParq1');
+INSERT INTO tem VALUES ('LisbParq', 'SaidaLisbParq2');
+INSERT INTO tem VALUES ('LisbParq', 'SaidaLisbParq3');
+
+
+INSERT INTO tem VALUES ('EvrParq', 'EntradaEvrParq1');
+INSERT INTO tem VALUES ('EvrParq', 'EntradaEvrParq2');
+INSERT INTO tem VALUES ('EvrParq', 'EntradaEvrParq3');
+INSERT INTO tem VALUES ('EvrParq', 'SaidaEvrParq1');
+INSERT INTO tem VALUES ('EvrParq', 'SaidaEvrParq2');
+INSERT INTO tem VALUES ('EvrParq', 'SaidaEvrParq3');
+
+
+-- (e)        (f)         (g)                         
+INSERT INTO ClienteViaVerde VALUES(141231,312323,123,'23-45-AA','Joao Antonio Silva','Rua das Flores, n25', 'Santarem');
+INSERT INTO ClienteViaVerde VALUES(645231,542312,124,'22-45-AA','Mariana Isabel Santos','Rua de D. Bartolomeu, n 31', 'Lisboa');
+INSERT INTO ClienteViaVerde VALUES(875231,762312,125,'21-45-AA','Antonio Francisco Gomes','Av. Fernando Pessoa, n 55', 'Evora');
+
+-- (h)
+INSERT INTO cancelaParq VALUES (123,'2014-10-12 18:33:24','EntradaLisbParq1','Entrada');
+
+-- (i)
+INSERT INTO cancelaParq VALUES (123,'2014-10-13 08:12:14','SaidaLisbParq1','Saida');
+
+-- (j)
+INSERT INTO cancelaParq VALUES (124,'2014-10-10 11:22:42','EntradaEvrParq2','Entrada');
+
+-- (k)
+INSERT INTO cancelaParq VALUES (124,'2014-10-10 13:00:24','SaidaEvrParq3','Saida');
+
+-- (l)
+INSERT INTO passagemAE VALUES(125,'A2EvrSaida','2009-11-12 14:05:11');
+
+-- (m)
+INSERT INTO passagemAE VALUES (125, 'A2GranSaida','2009-11-12 15:00:00');
+
+-- (n)
+INSERT INTO passagemAE VALUES (125, 'Pt25AbrilEntradaS','2009-11-01 18:05:24');
+
+-- (o)
+INSERT INTO abastecimento VALUES (125, 'BombaEvr1','2009-10-11 21:00:44', 50,'Gasoleo', 40);
+
+-- EXTRA INFO (Alinea 4)
+INSERT INTO ClienteViaVerde VALUES(851124,362789,100,'87-41-GB','Ricardo Jorge Chambel','Rua das Papoilas, n11', 'Evora');
+INSERT INTO ClienteViaVerdePass VALUES(100,98754463);
+
+INSERT INTO passagemAE VALUES (123, 'A2EvrEntrada', '2014-11-25 09:00:12');
+INSERT INTO passagemAE VALUES (123, 'A2LsbSaida', '2014-11-25 09:55:51');
+INSERT INTO passagemAE VALUES (123, 'A2LsbEntrada', '2014-11-25 18:15:16');
+INSERT INTO passagemAE VALUES (123, 'A2EvrSaida', '2014-11-25 19:30:24');
+INSERT INTO passagemAE VALUES (123,'Pt25AbrilEntradaS','2014-11-25 10:00:54');
+INSERT INTO passagemAE VALUES (123,'Pt25AbrilEntradaN','2014-11-25 10:07:44');
+INSERT INTO passagemAE VALUES (123,'PtVGamaEntradaN','2014-11-25 18:00:55');
+INSERT INTO passagemAE VALUES (123,'PtVGamaEntradaS','2014-11-25 18:10:09');
+INSERT INTO abastecimento VALUES (123,'BombaEvr2','2014-11-25 08:45:43',20,'Gasolina',15);
+INSERT INTO abastecimento VALUES (123,'BombaLsb2','2014-11-25 17:00:33',21,'Gasolina',14);
+
+INSERT INTO cancelaparq VALUES(123,'2014-10-25 08:30:34', 'SaidaEvrParq2', 'Saida');
+INSERT INTO cancelaparq VALUES(123,'2014-10-25 10:30:43', 'EntradaLisbParq3', 'Entrada');
+INSERT INTO cancelaparq VALUES(123,'2014-10-25 16:30:12', 'SaidaLisbParq1', 'Saida');
+INSERT INTO cancelaparq VALUES(123,'2014-10-25 20:01:01', 'EntradaEvrParq1','Entrada');
+
+INSERT INTO passagemAE VALUES (100, 'Pt25AbrilEntradaS','2009-11-02 19:05:25');
+
+INSERT INTO passagemAE VALUES (100, 'Pt25AbrilEntradaS','2014-12-02 19:05:15');
+
+-- ALINEA 5 (QUERYS)
+-- (a)
+SELECT Nome,NPassp FROM ClienteViaVerde NATURAL INNER JOIN ClienteViaVerdePass;
+
+-- (b)
+SELECT Matricula FROM servico NATURAL INNER JOIN abastecimento NATURAL INNER JOIN clienteservico NATURAL INNER JOIN tem 
+INNER JOIN ClienteViaVerde ON ClienteViaVerde.IdViaVerde = Abastecimento.IdViaVerde
+	WHERE (ClienteServico.Nome='Galp' AND IDLOCAL='BombaEvr');
+
+-- (c)
+SELECT Matricula FROM PassagemAE NATURAL INNER JOIN ClienteViaVerde
+	WHERE IdLocalP='A2GranSaida';
+
+-- (d)
+SELECT dataD,IDlocalP
+FROM ClienteViaVerde NATURAL INNER JOIN cancelaParq
+WHERE IdViaVerde ='123'
+UNION
+SELECT DataD,IDlocalP
+FROM ClienteViaVerde NATURAL INNER JOIN abastecimento
+WHERE IdViaVerde = '123'
+UNION
+SELECT DataD,IDlocalP
+FROM ClienteViaVerde NATURAL INNER JOIN passagemAE
+WHERE IdViaVerde = '123';
+
+-- (e)
+
+
+-- (f)
+
+-- (g)
+SELECT DISTINCT Nome FROM abastecimento NATURAL INNER JOIN ClienteViaVerde;
+
+-- (h)
+SELECT DISTINCT Nome FROM cancelaparq NATURAL INNER JOIN ClienteViaVerde;
+
+-- (i)
+
+-- (j)
+SELECT max(numero.passagens) FROM(
+SELECT NomePonte,idlocal,count(idlocal) AS passagens
+FROM ponte NATURAL INNER JOIN tem INNER JOIN passagemAE ON tem.IdLocalp=passagemae.IdLocalp
+WHERE (SELECT EXTRACT(YEAR FROM passagemAE.DataD))=2014
+GROUP BY idlocal
+) AS numero
+;
+
+-- (l)
+
+-- (m)
+
+-- (n)
+
+-- (o)
+SELECT DISTINCT nome FROM ((SELECT nome, idviaverde FROM clienteviaverde) 
+EXCEPT (SELECT nome,idviaverde FROM passagemae NATURAL INNER JOIN tem NATURAL INNER JOIN ponte NATURAL INNER JOIN clienteviaverde)) AS tabela; 
+
+-- (p)

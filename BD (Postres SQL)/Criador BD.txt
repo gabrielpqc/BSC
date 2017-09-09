@@ -1,0 +1,110 @@
+CREATE TABLE ClienteViaVerde (
+NIB INTEGER CHECK(NIB>0),
+NIF INTEGER CHECK(NIF>0),
+IdViaVerde VARCHAR(30)  NOT NULL,
+Matricula VARCHAR(8)  NOT NULL,
+Nome VARCHAR(30)  NOT NULL,
+Morada VARCHAR(30)  NOT NULL,
+Cidade VARCHAR(30) NOT NULL,
+PRIMARY KEY (IdViaVerde)
+);
+
+CREATE TABLE ClienteViaVerdePass (
+IdViaVerde VARCHAR(30)  NOT NULL,
+NPassp INTEGER CHECK(NPassp>0),
+PRIMARY KEY (NPassp),
+Foreign key(IdViaVerde) references ClienteViaVerde(IdViaVerde)
+);
+
+CREATE TABLE ClienteViaVerdeBi (
+IdViaVerde VARCHAR(30)  NOT NULL,
+NBi INTEGER CHECK(NBi>0),
+Primary key(NBi),
+Foreign key(IdViaVerde) references ClienteViaVerde(IdViaVerde)
+);
+
+CREATE TABLE clienteServico (
+NIF INTEGER CHECK(NIF>0),
+NIB INTEGER CHECK(NIB>0),
+Nome VARCHAR(30)  NOT NULL,
+Morada VARCHAR(30)  NOT NULL,
+Cidade VARCHAR(30) NOT NULL,
+PRIMARY KEY (NIF)
+);
+
+CREATE TABLE servico (
+NIF INTEGER CHECK(NIF>0),
+IDLOCAL VARCHAR(30) NOT NULL,
+NomeLocal VARCHAR(30) NOT NULL,
+PRIMARY KEY (IDLOCAL),
+FOREIGN KEY (NIF) REFERENCES clienteServico(NIF)
+);
+
+CREATE TABLE bomba (
+IDLOCAL VARCHAR(30) NOT NULL,
+Morada VARCHAR(30)  NOT NULL,
+Cidade VARCHAR(30) NOT NULL,
+Foreign key(IDLOCAL) references servico(IDLOCAL),
+Primary key(IDLOCAL)
+);
+
+CREATE TABLE ponte  (
+IDLOCAL VARCHAR(30) NOT NULL,
+Valor INTEGER CHECK(Valor>0),
+NomePonte VARCHAR(30) NOT NULL,                    -- Inserido por mim 
+Foreign key(IDLOCAL) references servico(IDLOCAL),
+PRIMARY KEY (IDLOCAL)
+);
+
+CREATE TABLE parque (
+IDLOCAL VARCHAR(30) NOT NULL,
+ValorMinuto FLOAT CHECK(ValorMinuto>0),
+Cidade VARCHAR(30) NOT NULL,                 -- Inserido por mim 
+Foreign key(IDLOCAL) references servico(IDLOCAL),
+Primary Key (IDLOCAL)
+);
+
+CREATE TABLE portagemAutoEstrada  (
+IDLOCAL VARCHAR (30) NOT NULL,  
+Km INTEGER CHECK(Km>0),
+Saida VARCHAR (30) NOT NULL,
+Valor INTEGER CHECK(Valor>0),
+Foreign key(IDLOCAL) references servico(IDLOCAL),
+Primary Key (IDLOCAL)
+);
+
+CREATE TABLE tem (
+IDLOCAL VARCHAR(30) NOT NULL,
+IDLOCALP VARCHAR(30) NOT NULL,
+Foreign key(IDLOCAL) references servico(IDLOCAL),
+Primary Key(IDLOCALP)
+);
+
+CREATE TABLE cancelaParq (
+IdViaVerde VARCHAR(30)  NOT NULL,
+DataD timestamp NOT NULL,
+IDLOCALP VARCHAR(30) NOT NULL,
+EntradaSaida VARCHAR(30) NOT NULL,
+foreign key(IdViaVerde) references ClienteViaVerde(IdViaVerde),
+Primary Key(IdViaVerde,DataD) 
+);
+
+CREATE TABLE passagemAE (
+IdViaVerde VARCHAR(30)  NOT NULL,
+IDLOCALP VARCHAR(30) NOT NULL,
+DataD timestamp NOT NULL,
+Foreign key(IdViaVerde) references ClienteViaVerde(IdViaVerde),
+Foreign key(IDLOCALP) references tem(idlocalp),
+Primary Key(IDLOCALP,DataD,IdViaVerde) 
+);
+
+CREATE TABLE abastecimento (
+IdViaVerde VARCHAR(30)  NOT NULL,
+IDLOCALP VARCHAR(30) NOT NULL,
+DataD timestamp NOT NULL,
+Valor INTEGER CHECK(Valor>0),
+Combustivel VARCHAR(15) NOT NULL,                                      -- Adicionado por nós 
+Quantidade VARCHAR(10) NOT NULL,                                       -- Adicionado por nós 
+foreign key (IdViaVerde) references ClienteViaVerde(IdViaVerde),
+Primary Key(IdViaVerde,dataD)
+);
