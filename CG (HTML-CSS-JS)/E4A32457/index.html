@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>E4A32457</title>
+        <script type='text/javascript' src='./lib/x3dom-full.js'></script>
+        <script type="text/javascript">
+		
+		var timerid = 0;
+		var images = new Array("igreja.jpg","igreja1.jpg","igreja2.jpg","igreja3.jpg","igreja4.jpg");
+		var countimages = 0;
+		function startTime()
+		{
+			if(timerid)
+			{
+				timerid = 0;
+			}
+			var tDate = new Date();
+	
+			if(countimages == images.length)
+			{
+				countimages = 0;
+			}
+			if(tDate.getSeconds() % 5 == 0)
+				{
+				document.getElementById("imagem").src = images[countimages];			
+			countimages++;
+				}
+			timerid = setTimeout("startTime()", 1000);
+}
+		</script>
+        <link rel="stylesheet" href="./lib/x3dom.css">
+        <style type = "text/css">
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+        th {
+        	padding: 1em;
+        	background-color:#9F1C33;
+            color:white;
+        }
+        td {
+        	padding: 0.5em;
+            background-color: #EEE;
+            width: 50%;
+            text-align: center;
+        }
+        table {
+        	width:100%;
+        }
+        h1,h2 {
+        	text-align: center;
+        }
+        </style>
+    </head>
+    <body onload="startTime();">
+    	<h1>Exercício n.º 4 &mdash; Aluno n.º 32457</h1>
+    	<table>
+			<tr>
+				<th>Original</th>
+				<th>Reprodução</th>
+			</tr>
+    		<tr>
+                <td><img id="imagem" style = "width:100%"></img></td>
+				<td>
+                
+                <x3d def="igreja" width="720px" height="500px" style="width:100%">
+  <scene>      
+      <!-- Base Edificio + Chão -->
+       <viewpoint  position='0 7 15' orientation='1 0 0 -0.4'></viewpoint>
+      
+<transform id="igreja">
+    
+    
+      <transform translation='0 -0.5 0'>
+    <shape def = "base">
+      <appearance>
+        <ImageTexture url= "./texturas/wall.jpg"   />
+      </appearance>
+      <box size = "7 2 6">
+        </box>
+    </shape>
+      </transform>
+      
+       <transform translation='0 1.5 0'>
+    <shape def = "base2">
+      <appearance>
+        <ImageTexture url= "./texturas/wall2.jpg"   />
+      </appearance>
+      <box size = "7 2 6">
+        </box>
+    </shape>
+      </transform>
+      
+      
+      <transform translation='0 3 0'>
+    <shape def = "base3">
+      <appearance>
+        <ImageTexture url= "./texturas/wall1.jpg"   />
+      </appearance>
+      <box size = "7 1 3">
+        </box>
+    </shape>
+      </transform>
+      
+    <transform translation='0 -1.5 0'>
+      <shape def = "chao">
+      <appearance>
+        <ImageTexture url= "./texturas/floor.jpg" repeatT="true" repeatS="true"   />
+      </appearance>
+      <box size = "10 0.1 8">
+        </box>
+    </shape>
+      </transform>
+      
+    <!-- Pilares Frontais     -->
+    <transform translation="4.5 -0.5 -1.5">
+      <shape def = "pilar_frente">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.3 2 0.3">
+          </box>
+      </shape>
+     </transform>
+     <transform translation="4.5 -0.5 -0.5">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+    <transform translation="4.5 -0.5 1.5">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+    <transform translation="4.5 -0.5 2.5">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+    <transform translation="4.5 -0.5 -2.5">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+    <transform translation="4.5 -0.5 0.5">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+    
+    <!--Pilares mais pequenos (em cima) -->
+        <transform translation="4.5 0.7 2.5">
+      <shape def = "pilar_frente_pequeno">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.25 0.5 0.25">
+          </box>
+      </shape>
+     </transform>
+    <transform translation="4.5 0.7 -2.5">
+         <shape USE = "pilar_frente_pequeno"/>
+        </transform>
+
+    <!--  Topo dos Pilares Frontais    -->
+    <transform translation="4.5 0.55 -2.5">
+      <shape def = "pilar_topo">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.4 0.1 0.4">
+          </box>
+      </shape>
+     </transform>
+    <transform translation="4.5 0.55 -1.5">
+         <shape USE = "pilar_topo"></shape>
+        </transform>
+    <transform translation="4.5 0.55 -0.5">
+         <shape USE = "pilar_topo"></shape>
+        </transform>
+    <transform translation="4.5 0.55 0.5">
+         <shape USE = "pilar_topo"></shape>
+        </transform>
+    <transform translation="4.5 0.55 1.5">
+         <shape USE = "pilar_topo"></shape>
+        </transform>
+    <transform translation="4.5 0.55 2.5">
+         <shape USE = "pilar_topo"></shape>
+        </transform>
+        
+        <transform translation="4 0.58 0">
+      <shape def = "pilar_topo2">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.7 0.1 5.3">
+          </box>
+      </shape>
+     </transform>
+
+        <transform translation="4.5 0.60 0">
+      <shape def = "pilar_topo3">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.5 0.1 5.5">
+          </box>
+      </shape>
+     </transform>
+        
+    <!-- Topo dos Pilares mais pequenos-->
+    <transform translation="4.5 0.95 2.5">
+      <shape def = "pilar_topo4">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.4 0.1 0.4">
+          </box>
+      </shape>
+     </transform>
+     <transform translation="4.5 0.95 -2.5">
+      <shape USE = "pilar_topo4"/>
+        </transform>
+
+        <transform translation="4 0.95 0">
+      <shape def = "pilar_topo5">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "1.2 0.05 5.1">
+          </box>
+      </shape>
+     </transform>
+
+    <!--   Pilares Principais   -->
+        <transform translation="3.2 -0.5 2.8">
+      <shape def = "pilar_principal">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+            <TextureTransform scale = "123322125 22121231"/>
+        </appearance>
+        <box size = "0.7 2 0.7">
+          </box>
+      </shape>
+     </transform>
+        <transform translation="3.2 -0.5 -2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="-3.2 -0.5 -2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="-3.2 -0.5 2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="3.2 1.5 -2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="-3.2 1.5 -2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="-3.2 1.5 2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        <transform translation="3.2 1.5 2.8">
+         <shape USE = "pilar_principal"></shape>
+        </transform>
+        
+        <transform translation="3.2 2 -2.8">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+        <transform translation="-3.2 2 -2.8">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+        <transform translation="-3.2 2 2.8">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+        <transform translation="3.2 2 2.8">
+         <shape USE = "pilar_frente"></shape>
+        </transform>
+
+        <transform translation="3.5 2.2 -1.5">
+      <shape def = "pilar_frente1">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.4 2.7 0.4">
+          </box>
+      </shape>
+     </transform>
+        <transform translation="3.5 2.2 1.5">
+         <shape USE = "pilar_frente1"></shape>
+        </transform>
+
+        <!--  Topo dos Pilares Principais   -->
+    <transform translation="3.2 0.55 2.8">
+      <shape def = "pilar_principal_topo">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.8 0.1 0.8">
+          </box>
+      </shape>
+     </transform>
+        <transform translation="3.2 0.55 -2.8">
+         <shape USE = "pilar_principal_topo"/>               
+        </transform>
+        <transform translation="-3.2 0.55 -2.8"/>
+         <shape USE = "pilar_principal_topo">               
+        </transform>
+        <transform translation="-3.2 0.55 2.8">
+         <shape USE = "pilar_principal_topo"/>               
+        </transform>
+
+        <transform translation='0 0.5 0'> 
+      <shape def = "separacao_meio">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "7.1 0.1 6.1">
+          </box>
+      </shape>
+        </transform>
+        
+        
+        <transform translation="0 2.53 2.3">
+      <shape def = "separacao_topo">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "7.6 0.1 1.9">
+          </box>
+      </shape>
+     </transform>
+
+        <transform translation="0 2.54 -2.3">
+         <shape USE = "separacao_topo"/>
+        </transform>
+
+        <!-- Topo dos pilares da frente (topo)-->
+        <transform translation="3.4 3.55 -1.4">
+         <shape USE = "pilar_principal_topo"></shape>
+        </transform>
+        <transform translation="3.4 3.55 1.4">
+         <shape USE = "pilar_principal_topo"></shape>
+        </transform>
+        <transform translation="-3.4 3.55 -1.4">
+         <shape USE = "pilar_principal_topo"></shape>
+        </transform>
+        <transform translation="-3.4 3.55 1.4">
+         <shape USE = "pilar_principal_topo"></shape>
+        </transform>
+
+        <!-- Pilares Traseiros -->
+         <transform translation="-3.5 1 -1.5">
+      <shape def = "pilar_traseiro">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.4 5 0.4"></box>
+      </shape>
+     </transform>
+        <transform translation="-3.5 1 1.5">
+         <shape USE = "pilar_traseiro"></shape>
+        </transform>
+        
+    <!-- 'Arcos' Frontais e Laterais-->
+    <transform translation="4.5 0.33 0">
+      <shape def = "arcos_frontais">
+        <appearance>
+          <ImageTexture url= "./texturas/parede.jpg"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.1 0.4 5">
+          </box>
+      </shape>
+     </transform>
+
+    <transform translation="4 0.33 2.5">
+      <shape def = "arcos_laterais">
+        <appearance>
+          <ImageTexture url= "./texturas/parede.jpg"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "1 0.4 0.1">
+          </box>
+      </shape>
+     </transform>
+        <transform translation="4 0.33 -2.5">
+      <shape USE = "arcos_laterais">
+            </transform>
+
+            <transform translation="4.5 0.75 0">
+         <shape USE = "arcos_frontais"/>
+        </transform>
+            
+            <transform translation="4 0.7 -2.5">
+         <shape USE = "arcos_laterais"/>
+        </transform>
+            
+            <transform translation="4 0.7 2.5">
+         <shape USE = "arcos_laterais"/>
+        </transform>
+
+    <!-- Janela Circular -->
+        <transform translation='3.5 2.2 0'>
+    <shape def = "janela_circular">
+      <appearance>
+        <ImageTexture url= "./texturas/circle.jpg"/>
+      </appearance>
+      <box size = "0.05 2.7 3.3"></box>
+    </shape>
+      </transform>
+
+    <!-- Portas -->
+        <transform translation="3.50 -0.5 0">
+      <shape def = "portas">
+        <appearance>
+          <ImageTexture url= "./texturas/the_doors.jpg" repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "0.05 2 4.90"></box>
+      </shape>
+     </transform>
+        
+    <!-- Telhado -->
+        <shape def="telhado">
+			<appearance>
+				<imagetexture url="./texturas/pilares.png"></imagetexture>
+			</appearance>
+				<indexedfaceset coordIndex=" 3, 2, 1, 0, -1, 2, 5, 4, 1, -1">
+                            <coordinate
+                                point="
+                                        -3.4 3.5 1.7,
+                                        -3.4 4 0,
+                                        3.4 4 0,
+                                        3.4 3.5 1.7,
+                                       -3.4 3.5 -1.7,
+                                        3.4 3.5 -1.7,">
+                            </coordinate>
+                            <texturecoordinate
+                                point="
+                                        -3.4 3.5 1.7,
+                                        -3.4 4 0,
+                                        3.4 4 0,
+                                        3.4 3.5 1.7 ">
+                            </texturecoordinate>
+        </shape>
+        <shape def="parede_telhado">
+			<appearance>
+				<imagetexture url="./texturas/wall.jpg"/>
+			</appearance>
+                </indexedfaceset>
+                    <indexedfaceset coordIndex="2,0,1,-1, 4, 3, 5, -1">
+                            <coordinate
+                                point="
+                                        3.4 4 0,
+                                        3.4 3.5 1.7,
+                                        3.4 3.5 -1.7,
+                                        -3.4 4 0,
+                                        -3.4 3.5 1.7,
+                                        -3.4 3.5 -1.7">
+                            </coordinate>
+                            <texturecoordinate
+                                point=" 3.4 4 0,
+                                        3.4 3.5 1.7,
+                                        3.4 3.5 -1.7,
+                                        -3.4 4 0,
+                                        -3.4 3.5 1.7,
+                                        -3.4 3.5 -1.7">
+                            </texturecoordinate>
+                        </indexedfaceset>
+            </shape>
+            
+            <!--Pilares Estreitos do Telhado -->
+            <transform translation="3.5 3.85 1.5">
+      <shape def = "pilar_topo_t">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+            <TextureTransform scale = "123322125 22121231"/>
+        </appearance>
+        <box size = "0.5 0.05 0.5">  </box>
+      </shape>
+     </transform>
+            <transform translation="3.5 3.85 -1.5">
+      <shape USE = "pilar_topo_t"/>
+        </transform>
+            <transform translation="-3.5 3.85 1.5">
+      <shape USE = "pilar_topo_t"/>
+        </transform>      
+            <transform translation="-3.5 3.85 -1.5">
+      <shape USE = "pilar_topo_t"/>
+        </transform>      
+
+            
+           <transform translation="3.5 2.5 1.5">
+      <shape USE = "pilar_frente1"/>
+        </transform>
+            <transform translation="3.5 2.5 -1.5">
+      <shape USE = "pilar_frente1"/>
+        </transform>
+            <transform translation="-3.5 2.5 1.5">
+      <shape USE = "pilar_frente1"/>
+        </transform>
+            <transform translation="-3.5 2.5 -1.5">
+      <shape USE = "pilar_frente1"/>
+        </transform>
+    
+       <transform translation="3.2 3 2.8">
+      <shape USE = "pilar_topo4"/>
+        </transform>
+           <transform translation="3.2 3 -2.8">
+      <shape USE = "pilar_topo4"/>
+        </transform>
+           <transform translation="-3.2 3 -2.8">
+      <shape USE = "pilar_topo4"/>
+        </transform>
+           <transform translation="-3.2 3 2.8">
+      <shape USE = "pilar_topo4"/>
+        </transform>
+            
+        <transform translation="0 3.5 0">
+      <shape def = "separacao_telhado">
+        <appearance>
+          <ImageTexture url= "./texturas/pilares.png"  repeatT="true" repeatS="true"/>
+        </appearance>
+        <box size = "6.8 0.05 3.4"/>
+      </shape>
+     </transform>
+            
+</transform>
+    <!--BackGround e Luz -->
+     <Background DEF='SandyShallowBottom' groundAngle='0.05 1.52 1.56 1.5707' groundColor='0.3 0.5 0 0.3 0.6 0 0.3 1 0 0.3 1 0 0.6 1 0.4' skyAngle='0.04 0.05 0.1 1.309 1.570' skyColor='0.8 0.8 0.2 0.8 0.8 0.2 0.1 0.1 0.6 0.1 0.1 0.6 0.1 0.25 0.8 0.6 0.6 0.9'/> 
+    <directionalLight direction='-3 -1 -2' intensity='1.0' shadowIntensity='0.5'></directionalLight>
+    
+
+        <timesensor def="clock" cycleInterval="25" loop="true"></timesensor>
+        <orientationInterpolator def="rodar" key="0 0.25 0.5 0.75 1" keyValue="0 1 0 0, 0 1 0 1.57, 0 1 0 3.14, 0 1 0 4.71, 0 1 0 6.28"					</orientationInterpolator>
+         <route fromNode="clock" fromField="fraction_changed" toNode="rodar" toField="set_fraction"></route>
+        <route fromNode="rodar" fromField="value_changed" toNode="igreja" toField="set_rotation"></route> 
+    </td>
+    </tr>
+    	</table>
+        <h2>Engenharia Informática, Computação Gráfica &mdash; 2014-15</h2>
+    </body>
+</html>
+

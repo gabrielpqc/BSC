@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>E3A32457</title>
+        <style type = "text/css">
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+        th {
+        	padding: 1em;
+        	background-color:#9F1C33;
+            color:white;
+        }
+        td {
+        	padding: 0.5em;
+            background-color: #EEE;
+            width: 50%;
+            text-align: center;
+        }
+        table {
+        	width:100%;
+        }
+        h1,h2 {
+        	text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+    	<h1>Exercício n.º 3 &mdash; Aluno n.º 32457</h1>
+    	<table>
+			<tr>
+				<th>Original</th>
+				<th>Reprodução</th>
+			</tr>
+    		<tr>
+                <td><img src="./teste.jpg" style="width:100%"></img></td>
+                <td>
+                    <script src="js/three.min.js"></script>
+                    <script>
+			             var scene = new THREE.Scene();
+                        var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+                        var renderer = new THREE.WebGLRenderer();
+                        renderer.setSize( window.innerWidth, window.innerHeight );
+                        document.body.appendChild( renderer.domElement );
+                        
+                        
+                        
+                        
+                        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+                        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+                        var cube = new THREE.Mesh( geometry, material );
+                        scene.add( cube );
+
+                        camera.position.z = 5;
+                        
+                        
+                        
+                        function render() {
+	                       requestAnimationFrame( render );
+	                       renderer.render( scene, camera );
+                        }
+                        render();
+		            </script>
+                </td>
+			</tr>
+    	</table>
+        <h2>Engenharia Informática, Computação Gráfica &mdash; 2014-15</h2>
+    </body>
+</html>
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>E3A32457</title>
+        <style type = "text/css">
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+        th {
+        	padding: 1em;
+        	background-color:#9F1C33;
+            color:white;
+        }
+        td {
+        	padding: 0.5em;
+            background-color: #EEE;
+            width: 50%;
+            text-align: center;
+        }
+        table {
+        	width:100%;
+        }
+        h1,h2 {
+        	text-align: center;
+        }
+        </style>
+        
+    </head>
+    <body>
+    	<h1>Exercício n.º 3 &mdash; Aluno n.º 32457</h1>
+    	<table>
+			<tr>
+				<th>Original</th>
+				<th>Reprodução</th>
+			</tr>
+    		<tr>
+                <td><img src="./dryad.jpg" style="width:100%"></img></td>
+                <td>
+                    <script src="./lib/three.min.js"></script>
+                    <script src="./lib/three.js"></script>
+                    <script src="./lib/three.min.js"></script>
+                    <script src="./lib/tween.js"></script>
+                    <script src="../lib/three.min.js"></script>
+                    <script src="../lib/three.js"></script>
+                    <script src="../lib/three.min.js"></script>
+                    <script src="../lib/tween.js"></script>
+		<script style="width:100%">
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth/3, window.innerHeight/3 );
+			document.body.appendChild( renderer.domElement );
+            
+            var tronco = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#9f8d46',
+                color: '#9f8d46',
+                emissive: '#9f8d46',
+                shininess: 100 
+                }));
+                scene.add(tronco);
+            var tronco1 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#291d05',
+                color: '#291d05',
+                emissive: '#291d05',
+                shininess: 100 
+                }));
+                scene.add(tronco1);
+                tronco1.position.set(0,-13,0);
+            
+            var cabeça = new THREE.Mesh(new THREE.SphereGeometry(8, 55, 55), new THREE.MeshPhongMaterial({
+            specular: '#9f8d46',
+                color: '#9f8d46',
+                emissive: '#9f8d46',
+                shininess: 100 
+                }));
+                cabeça.position.set(0,12,0);
+                scene.add(cabeça);
+            
+            var braço1 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#9f8d46',
+                color: '#9f8d46',
+                emissive: '#9f8d46',
+                shininess: 100 
+                }));
+                scene.add(braço1);
+            braço1.rotation.z = 3.14/2;
+            braço1.position.set(12,0,0);
+            
+            var braço2 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#9f8d46',
+                color: '#9f8d46',
+                emissive: '#9f8d46',
+                shininess: 100 
+                }));
+                scene.add(braço2);
+             braço2.rotation.z = 3.14/2;
+            braço2.position.set(-12,0,0);
+            
+            var perna1 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#291d05',
+                color: '#291d05',
+                emissive: '#291d05',
+                shininess: 100 
+                }));
+                scene.add(perna1);
+            perna1.rotation.z = -3.14/4;
+            perna1.position.set(-8,-25,0);
+            
+            var perna2 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 12, 55, 55, false), new THREE.MeshPhongMaterial({
+            specular: '#291d05',
+                color: '#291d05',
+                emissive: '#291d05',
+                shininess: 100 
+                }));
+                scene.add(perna2);
+            perna2.rotation.z = 3.14/4;
+            perna2.position.set(8,-25,0);
+            
+            
+            
+            
+            //câmara
+			camera.position.z = 55;
+            
+             //luz1
+                var ambientLight = new THREE.AmbientLight(0x222222);
+                scene.add(ambientLight);
+      
+            //luz 2
+                var directionalLight = new THREE.DirectionalLight(0xffffff);
+                directionalLight.position.set(1, 1, 1).normalize();
+                scene.add(directionalLight);
+
+			var render = function () {
+				requestAnimationFrame( render );
+
+				//corpo.rotation.x += 0.01;
+				//corpo.rotation.y += 0.01;
+
+				renderer.render(scene, camera);
+			};
+
+			render();
+		</script>
+                </td>
+			</tr>
+    	</table>
+        <h2>Engenharia Informática, Computação Gráfica &mdash; 2014-15</h2>
+    </body>
+</html>
