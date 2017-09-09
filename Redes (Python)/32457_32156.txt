@@ -1,0 +1,18 @@
+Gabriel Charrua - 32457
+Carlos Coxinho - 32156
+
+Utilizámos neste trabalho o servidor desenvolvido nas aulas práticas, com algumas modificações às mensagens recebidas pelo mesmo. Não ulizando listas para 'decifrar' as mensagens recebidas pelo servidor, utilizámos apenas Strings, separando-as nos espaços (' ') através do .split.
+Ao termos as Strings separadas, a 1ª parte da mesma é o comando que o utilizador enviou para o servidor, e a 2ª a mensagem enviada.
+Nota: O ficheiro users.txt (usado à frente) é criado ao iniciar o servidor.
+O "comando" é uma das seguintes Strings:
+-LOGIN
+-REGISTER
+-PUBLIC
+-PRIVMSGS
+-SENDMSGS
+-SENDPRIVMSGS
+-GOODBYE
+Todas os comandos acima funcionam através do acesso a ficheiros ('users.txt', 'publica.txt' ou '(...).txt), de forma a validar os logins, fazer os registos ou consultar (no caso de existirem) as mensagens. No caso de um envio de uma mensagem para um ficheiro que ainda não exista, o mesmo é criado.
+
+Para a interface do cliente, criámos 2 menus que funciona à base de input de Ints, em que o 1º menu é o menu inicial (Login/Register/Exit) e o 2º menu permite o utilizador consultar/enviar mensagens.
+Nota: O 2º menu é recursivo o que permite ao utilizador enviar/consultar as mensagens que pertender até seleccionar a opção EXIT.
